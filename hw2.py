@@ -3,11 +3,10 @@
 import pandas as pd
 import numpy as np
 
-# Write a python script that creates a dataframe form a URL that points to a CSV file such as 
+# Write a python function that creates a dataframe from a URL that points to a CSV file such as 
 # the pronto data or CSVs in data.gov.
-
-url = 'https://data.seattle.gov/api/views/tw7j-dfaw/rows.csv?accessType=DOWNLOAD'
-df = pd.read_csv(url)
+def create_dataframe(url):
+    return pd.read_csv(url)
 
 # Create the function test_create_dataframe() that takes as input: 
 #   (a) a pandas DataFrame

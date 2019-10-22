@@ -21,17 +21,16 @@ def test_create_dataframe(df,col_names):
 
     # Check columns
     if set(col_names) != set(df.columns):
-        print('Incorrect column names')
         return False
 
     # Check types
-    if len(set(df.dtypes)) > 1:
-        print('Incorrect types')
-        return False
+    for col in df.columns:
+        type_set = set([type(entry) for entry in df[col].to_list()])
+        if len(type_set) > 1:
+            return False
 
     # Check length
     if len(df) < 10:
-        print('Incorrect length')
         return False
 
     return True
